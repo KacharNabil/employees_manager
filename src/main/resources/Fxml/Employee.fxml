@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="713.0" prefWidth="809.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx_projcet.EmployeeController">
+   <children>
+      <VBox layoutX="14.0" layoutY="109.0" prefHeight="300.0" prefWidth="300.0" spacing="10.0">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Id Employee" />
+            <TextField fx:id="id" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nom complete" />
+            <TextField fx:id="name" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salaire" />
+            <TextField fx:id="salary" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Age" />
+            <TextField fx:id="age" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departement" />
+            <TextField fx:id="department" />
+         </children>
+      </VBox>
+      <TableView fx:id="table" layoutX="350.0" layoutY="130.0" onMouseClicked="#getData" prefHeight="279.0" prefWidth="424.0">
+        <columns>
+          <TableColumn fx:id="colid" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="colfullname" prefWidth="106.0" text="Nom Complete" />
+            <TableColumn fx:id="colage" prefWidth="57.0" text="Age" />
+            <TableColumn fx:id="colsalary" prefWidth="82.0" text="Salaire" />
+            <TableColumn fx:id="coldepartment" prefWidth="103.0" text="Department" />
+        </columns>
+      </TableView>
+      <Label layoutX="314.0" layoutY="61.0" text="Employees managment project" />
+      <ButtonBar layoutX="94.0" layoutY="452.0" prefHeight="40.0" prefWidth="478.0">
+        <buttons>
+            <Button fx:id="btnupdate" layoutX="413.0" layoutY="18.0" mnemonicParsing="false" onAction="#modifyEmployee" text="Modifier" />
+            <Button fx:id="btnadd" layoutX="413.0" layoutY="18.0" mnemonicParsing="false" onAction="#addEmployee" text="Ajouter" />
+            <Button fx:id="btndelete" layoutX="413.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteEmployee" text="Supprimer" />
+            <Button fx:id="statistic" layoutX="413.0" layoutY="18.0" mnemonicParsing="false" onAction="#displayStat" text="Statistique" />
+        </buttons>
+      </ButtonBar>
+      <Label fx:id="totalEmployeesLabel" layoutX="69.0" layoutY="510.0" prefHeight="40.0" prefWidth="337.0" text="Total number of employees:" />
+      <Label fx:id="mostEmployeDept" layoutX="424.0" layoutY="510.0" prefHeight="40.0" prefWidth="355.0" text="Department with the most employees:" />
+      <Label fx:id="mostEmployeesCount" layoutX="424.0" layoutY="530.0" prefHeight="40.0" prefWidth="355.0" text="Employees" />
+      <Label fx:id="employeesPerDepartment" layoutX="65.0" layoutY="544.0" prefHeight="161.0" prefWidth="355.0" text="Employees per department:" />
+      <Label fx:id="totalSalaryMass" layoutX="420.0" layoutY="570.0" prefHeight="88.0" prefWidth="355.0" text="Total salary mass of employees" />
+   </children>
+</AnchorPane>
